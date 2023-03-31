@@ -11,7 +11,7 @@ class AntiPing(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, message):
+    async def on_message(message):
         message.channel.send("A message was sent.")
         for i, mentioned in enumerate(iter_all_mentions(message)):
             message.channel.send("Iteration Worked.")
