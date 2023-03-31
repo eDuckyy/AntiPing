@@ -15,7 +15,7 @@ class AntiPing(commands.Cog):
         text = message.content
         for i, mentioned in enumerate(iter_all_mentions(message)):
             allowed_roles = {1089165585214087270, 1010144986806878290, 1000701304110338170, 1032993373470085160, 1070260250709590057}
-            if mentioned.id == 746966989347618858 and not any(role.id in allowed_roles for role in message.author.roles):
+            if mentioned.id == 746966989347618858: #and not any(role.id in allowed_roles for role in message.author.roles)
                 DateTime = datetime.datetime.now()
                 embed = discord.Embed(
                     title="Please refrain from pinging the Founder",
