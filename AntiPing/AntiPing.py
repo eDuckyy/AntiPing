@@ -12,12 +12,9 @@ class AntiPing(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(message):
-        message.channel.send("A message was sent.")
         for i, mentioned in enumerate(iter_all_mentions(message)):
-            message.channel.send("Iteration Worked.")
             allowed_roles = {1089165585214087270, 1010144986806878290, 1000701304110338170, 1032993373470085160, 1070260250709590057}
-            if mentioned.id == 746966989347618858: #and not any(role.id in allowed_roles for role in message.author.roles)
-                message.channel.send("Send Embed")
+            if mentioned.id == 746966989347618858 and not any(role.id in allowed_roles for role in message.author.roles):
                 DateTime = datetime.datetime.now()
                 embed = discord.Embed(
                     title="Please refrain from pinging the Founder",
@@ -25,7 +22,7 @@ class AntiPing(commands.Cog):
                     color=0xffe1b4
                 )
                 embed.set_footer(text=f"Pleasant Support • Pleasant Corporation • Today at {DateTime.strftime('%x %H:%M')}")
-                embed.set_image(url="https://tenor.com/en-GB/view/discord-reply-discord-reply-off-discord-reply-gif-22150762")
+                embed.set_image(url="https://media.tenor.com/ddg6ge2H_T0AAAAd/discord-reply.gif")
                 await message.channel.send(embed=embed)
 
 async def setup(bot):
