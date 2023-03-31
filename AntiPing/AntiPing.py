@@ -18,7 +18,11 @@ class AntiPing(commands.Cog):
                 DateTime = datetime.datetime.now()
                 embed = discord.Embed(
                     title="Please refrain from pinging the Founder",
-                    description="We do not allow you to ping our Founder at this time. For support, please send a Direct Message to <@1009340261282889729>. Multiple pings to the Founder may result in further moderation action taken.",
+                    description="""
+                    We do not allow you to ping our Founder at this time. For support, please send a Direct Message to @Pleasant Support. Multiple pings to the Founder may result in further moderation action taken.
+
+If you are replying to a message sent by the Founder, please follow the instructions provided in the video below on how to disable pinging the original author.
+                    """,
                     color=0xffe1b4
                 )
                 embed.set_footer(text=f"Pleasant Support • Pleasant Corporation • Today at {DateTime.strftime('%x %H:%M')}")
