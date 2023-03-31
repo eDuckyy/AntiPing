@@ -12,7 +12,6 @@ class AntiPing(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        text = message.content
         message.channel.send("A message was sent.")
         for i, mentioned in enumerate(iter_all_mentions(message)):
             message.channel.send("Iteration Worked.")
